@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+        }
+        .planner {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: auto 1fr auto;
+            gap: 10px;
+            background: #fff;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .planner div {
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .planner-header {
+            grid-column: span 7;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .goals, .next-week {
+            grid-column: span 2;
+        }
+        .todo {
+            grid-column: span 3;
+        }
+        .day {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .day input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .day input[type="text"] {
+            border: none;
+            border-bottom: 1px solid #ddd;
+            width: 100%;
+        }
+        .day textarea {
+            width: 100%;
+            resize: none;
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+        @media screen and (max-width: 768px) {
+            .planner {
+                grid-template-columns: 1fr;
+            }
+            .goals, .todo, .next-week {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="planner">
+        <div class="planner-header">Weekly Plan</div>
+        <div class="goals">
+            <h3>Top 3 Goals</h3>
+            <div><input type="checkbox"> Goal 1</div>
+            <div><input type="checkbox"> Goal 2</div>
+            <div><input type="checkbox"> Goal 3</div>
+        </div>
+        <div class="todo">
+            <h3>To Do</h3>
+            <textarea rows="5"></textarea>
+        </div>
+        <div class="next-week">
+            <h3>Next Week</h3>
+            <textarea rows="5"></textarea>
+        </div>
+        <div class="day"><h3>Monday</h3> <textarea rows="5"></textarea></div>
+        <div class="day"><h3>Tuesday</h3> <textarea rows="5"></textarea></div>
+        <div class="day"><h3>Wednesday</h3> <textarea rows="5"></textarea></div>
+        <div class="day"><h3>Thursday</h3> <textarea rows="5"></textarea></div>
+        <div class="day"><h3>Friday</h3> <textarea rows="5"></textarea></div>
+        <div class="day"><h3>Saturday</h3> <textarea rows="5"></textarea></div>
+        <div class="day"><h3>Sunday</h3> <textarea rows="5"></textarea></div>
+    </div>
+</body>
+</html>
